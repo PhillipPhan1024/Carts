@@ -1,8 +1,5 @@
 package com.phillipphan.carts.models;
 
-import java.util.Date;
-
-import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
  
 public class ProductDto {
