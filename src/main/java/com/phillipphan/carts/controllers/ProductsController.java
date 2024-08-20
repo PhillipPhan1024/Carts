@@ -19,7 +19,7 @@ public class ProductsController {
 
     @GetMapping({"", "/"})
     public String showProductList(Model model) {
-        List<Product> products = repo.findAll();
+        List<Product> products = repo.findAll(); // can add Sort.by() for sorting features. 
         model.addAttribute("products", products);
         return "products/index";
     }
