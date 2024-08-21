@@ -1,7 +1,5 @@
 package com.phillipphan.carts.models;
 
-import java.util.Date;
-
 import jakarta.persistence.*;
 
 @Entity
@@ -19,7 +17,7 @@ public class Cart {
 
     @Column(columnDefinition="TEXT")
     private String description;
-    private Date createdAt;
+    private String createdAt;
 
     public int getId() {
         return id;
@@ -57,10 +55,10 @@ public class Cart {
     public void setDescription(String description) {
         this.description = description;
     }
-    public Date getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 }

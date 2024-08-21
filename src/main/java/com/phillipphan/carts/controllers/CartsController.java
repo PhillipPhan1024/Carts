@@ -2,6 +2,7 @@ package com.phillipphan.carts.controllers;
 
 import java.util.List;
 import java.util.Date;
+import java.text.SimpleDateFormat;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -46,6 +47,8 @@ public class CartsController {
         }
 
         Date createdAt = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("MM/dd hh:mm a");
+        String formattedDate = formatter.format(createdAt);
 
         Cart cart = new Cart();
         cart.setCartNumber(cartDto.getCartNumber());
@@ -53,7 +56,7 @@ public class CartsController {
         cart.setEid(cartDto.getEid());
         cart.setPhone(cartDto.getPhone());
         cart.setDescription(cartDto.getDescription());
-        cart.setCreatedAt(createdAt);
+        cart.setCreatedAt(formattedDate);
 
         repo.save(cart);
         

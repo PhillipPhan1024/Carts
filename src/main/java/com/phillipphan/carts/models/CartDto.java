@@ -15,8 +15,7 @@ public class CartDto {
     @Size(min = 10, message = "Phone number must be 10 digits")
     @Size(max = 10, message = "Phone number must be 10 digits")
     private String phone;
-
-    @Size(min = 10, message = "The description should be at least 10 characters")
+    
     @Size(max = 2000, message = "The description cannot exceed 2000 characters")
     private String description;
 

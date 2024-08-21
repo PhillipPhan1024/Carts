@@ -35,8 +35,8 @@
             <td th:text="${cart.cartNumber}"></td>
             <td th:text="${cart.building}"></td>
             <td th:text="${cart.eid}"></td>
-            <td th:text="${cart.phone}"></td>
-            <td th:text="${cart.createdAt.toString().substring(0, 10)}"></td>
+            <td th:text="${#strings.substring(cart.phone, 0, 3)} + '-' + ${#strings.substring(cart.phone, 3, 6)} + '-' + ${#strings.substring(cart.phone, 6)}"></td>
+            <td th:text="${cart.createdAt.toString()}"></td>
             <td style="white-space: nowrap">
               <a
                 class="btn btn-primary btn-sm"
@@ -47,7 +47,7 @@
                 class="btn btn-danger btn-sm"
                 th:href="@{/carts/delete(id=${cart.id})}"
                 onclick="return confirm('Are you sure?')"
-                >Delete</a
+                >Return</a
               >
             </td>
           </tr>
