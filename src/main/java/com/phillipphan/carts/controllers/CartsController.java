@@ -5,6 +5,7 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -28,7 +29,7 @@ public class CartsController {
 
     @GetMapping({"", "/"})
     public String showCartList(Model model) {
-        List<Cart> carts = repo.findAll(); // can add Sort.by() for sorting features. 
+        List<Cart> carts = repo.findAll(Sort.by(Sort.Order.asc("cartNumber"))); 
         model.addAttribute("carts", carts);
         return "carts/index";
     }
