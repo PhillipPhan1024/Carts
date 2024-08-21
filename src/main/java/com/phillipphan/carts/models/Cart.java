@@ -5,17 +5,17 @@ import java.util.Date;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="products")
-public class Product {
+@Table(name="carts")
+public class Cart {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String name;
-    private String brand;
-    private String category;
-    private double price;
+    private String cartNumber;
+    private String building;
+    private String eid;
+    private String phone;
 
     @Column(columnDefinition="TEXT")
     private String description;
@@ -27,29 +27,29 @@ public class Product {
     public void setId(int id) {
         this.id = id;
     }
-    public String getName() {
-        return name;
+    public String getCartNumber() {
+        return cartNumber;
     }
-    public void setName(String name) {
-        this.name = name;
+    public void setCartNumber(String cartNumber) {
+        this.cartNumber = cartNumber;
     }
-    public String getBrand() {
-        return brand;
+    public String getBuilding() {
+        return building;
     }
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setBuilding(String building) {
+        this.building = building;
     }
-    public String getCategory() {
-        return category;
+    public String getEid() {
+        return eid;
     }
-    public void setCategory(String category) {
-        this.category = category;
+    public void setEid(String eid) {
+        this.eid = eid;
     }
-    public double getPrice() {
-        return price;
+    public String getPhone() {
+        return phone;
     }
-    public void setPrice(double price) {
-        this.price = price;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
     public String getDescription() {
         return description;
