@@ -4,6 +4,7 @@ import jakarta.validation.constraints.*;
  
 public class CartDto {
     @NotEmpty(message = "A Cart Number is required")
+    @Size(max = 2, message = "Cart number must be under 100")
     private String cartNumber;
 
     @NotEmpty(message = "The building name is required")
